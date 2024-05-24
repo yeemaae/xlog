@@ -3,7 +3,17 @@
 {% block title %}HOME{% endblock title %}
 
 {% block content %}
-<h1>
-    This is Content For Home Page
-</h1>
+{% include "blog/components/card.html" %}
+
+<div class="row">
+    <div class="col-12 col-lg-8">
+
+        {% include "blog/components/post-list-elements.html" %}
+
+    </div>
+    <div class="d-none d-lg-block col-4">
+
+    </div>
+</div>
+
 {% endblock content %}
