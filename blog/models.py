@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 from taggit.managers import TaggableManager
 
 
@@ -21,6 +22,9 @@ class Post(models.Model):
 
     class Meta:
         ordering = ("-created_at",)
+
+    def get_absolute_url(self):
+        return reverse("single_post", args=[self.slug])
 
     def __str__(self):
         return self.title

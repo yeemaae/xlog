@@ -13,7 +13,7 @@ class PostFactory(factory.django.DjangoModelFactory):
     title = factory.Faker("sentence", nb_words=12)
     subtitle = factory.Faker("sentence", nb_words=12)
     slug = factory.Faker("slug")
-    author = User.objects.get_or_create(username="admin")[0]
+    author = User.objects.get_or_create(username="yera")[0]
 
     @factory.lazy_attribute
     def content(self):
